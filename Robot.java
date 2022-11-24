@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
-  
+  private Command m_driveCommand = new TankDrive();
   private Joystick m_leftStick;
   private Joystick m_rightStick;
 
@@ -36,18 +36,16 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class./
   @Override
   public void autonomousInit() {      
-  //  THIS CODE WILL NEED TO BE REPLACED
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+  m_autonomousCommand = new AutonSpin();
 
     // schedule the autonomous command (example)
-    if (m_autonomousCommand != null) {
       mautonomousCommand.schedule();
-    }
   }
 
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
+    m_driveCommand.schedule();
     // THIS IS WHERE YOU WILL NEED TO ADD TANK DRIVE CODE_
   }
 
