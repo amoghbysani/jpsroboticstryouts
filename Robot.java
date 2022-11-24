@@ -12,8 +12,10 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  */
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
+  
+  private Joystick m_leftStick;
+  private Joystick m_rightStick;
 
-  private RobotContainer m_robotContainer;
 
   /
    * This function is called every 20 ms, no matter the mode. Use this for items like diagnostics
